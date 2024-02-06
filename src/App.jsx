@@ -5,21 +5,31 @@ export default function App() {
   const [total, setTotal] = React.useState(0);
 
   function display(btn) {
-    setExpression(expression == 0 ? btn : expression + btn);
-    if (expression[expression.length - 1] == "=") {
+    const array = expression.split("");
+    const lastIndex = array[array.length - 1];
+    if (expression == 0) {
+      setExpression(btn);
+    } else if (array.length == 36) {
+      setExpression(expression);
+    } else if (expression[expression.length - 1] == "=") {
       if (/[0-9.]/.test(btn)) {
         setExpression(btn);
       } else {
         setExpression(total + btn);
       }
+    } else {
+      setExpression(expression + btn);
     }
   }
 
   function operator(symbol) {
-    setExpression(expression == 0 ? 0 : expression + " " + symbol + " ");
     const array = expression.split("");
     const lastIndex = array[array.length - 1];
-    if (/[0-9]/.test(lastIndex)) {
+    if (expression == 0) {
+      setExpression(0);
+    } else if (array.length == 36) {
+      setExpression(expression);
+    } else if (/[0-9]/.test(lastIndex)) {
       setExpression(expression + " " + symbol + " ");
     } else if (lastIndex === "=") {
       setExpression(total + " " + symbol + " ");
@@ -29,9 +39,12 @@ export default function App() {
   }
 
   function decimal() {
+    const array1 = expression.split("");
     const array = expression.split(" ");
     const lastIndex = array[array.length - 1];
-    if (!lastIndex.includes(".") && /[0-9]/.test(lastIndex)) {
+    if (array1.length >= 35) {
+      setExpression(expression);
+    } else if (!lastIndex.includes(".") && /[0-9]/.test(lastIndex)) {
       setExpression(expression + ".");
     }
   }

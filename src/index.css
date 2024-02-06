@@ -26,7 +26,8 @@ main {
   border-radius: 10px;
   margin: 0 auto;
   padding: 1em;
-  min-width: 250px;
+  min-width: 300px;
+  max-width: 350px;
   background-color: black;
   color: white;
   display: grid;
@@ -46,8 +47,8 @@ button {
   font-family: monospace;
   border: none;
   border-radius: 30px;
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   font-weight: 700;
   margin: auto;
   cursor: pointer;
@@ -56,9 +57,9 @@ button {
 #display {
   grid-area: display;
   padding: 0;
-  margin: 0 1.4em;
+  margin: 0 1em;
   text-align: right;
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: rgb(87, 84, 84);
   line-height: 1.5em;
 }
@@ -67,8 +68,8 @@ button {
   grid-area: total;
   text-align: right;
   margin: 0 0.5em;
-  font-size: 1.8rem;
-  line-height: 2em;
+  font-size: 1.5rem;
+  line-height: 2.5em;
 }
 
 .number, #decimal {
