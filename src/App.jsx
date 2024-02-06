@@ -65,7 +65,7 @@ export default function App() {
   }
 
   return (
-    <>
+    <main>
       <div className="calculator">
         <p id="display" className="row">
           {expression}
@@ -129,6 +129,7 @@ export default function App() {
           -
         </button>
       </div>
-    </>
+      <p className="footer">made by Pedro Martins</p>
+    </main>
   );
 }
