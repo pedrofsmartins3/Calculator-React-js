@@ -92,8 +92,6 @@ button {
   background-color: orange;
   color: rgb(224, 224, 224);
   font-size: 2rem;
-  padding-bottom: 0.2em;
-  padding-right: 0.3em;
 }
 
 #clearAll {grid-area: clearAll}
@@ -128,4 +126,11 @@ button {
   color: rgb(224, 224, 224);
   font-size: 0.8rem;
   font-style: italic;
+}
+
+@media (min-width: 724px) {
+  #divide, #multiply, #subtract, #add, #equals {
+    padding-bottom: 0.2em;
+    padding-right: 0.3em;
+  }
 }
